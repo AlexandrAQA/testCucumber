@@ -12,7 +12,7 @@ public class OnlinerSearchPage {
                 .sendKeys(searchText);
     }
 
-    public ElementsCollection getProductTitles(String searchText){
+    public ElementsCollection getProductTitles(){
         switchTo().frame($(".modal-iframe"));//iframe and css
        return $$(".result__item_product .product__title .product__title-link");
     }
