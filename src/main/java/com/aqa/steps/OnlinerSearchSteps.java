@@ -2,6 +2,8 @@ package com.aqa.steps;
 
 import com.aqa.pages.OnlinerSearchPage;
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -31,6 +33,12 @@ public class OnlinerSearchSteps {
         assertThat(actualTitle)
                 .as("The first searchResult is incorrect")
                 .contains(searchResultTitle);
+        //System.out.println();
+    }
+
+    @And("The browser is maximized")
+    public void theBrowserIsMaximized() {
+        WebDriverRunner.getWebDriver().manage().window().maximize();
     }
 }
 
