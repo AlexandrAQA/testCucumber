@@ -3,14 +3,17 @@ package com.aqa.steps;
 import com.aqa.pages.OnlinerSearchPage;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.WebDriverRunner;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import java.util.List;
+import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OnlinerSearchSteps {
@@ -40,12 +43,20 @@ public class OnlinerSearchSteps {
 
     @And("The browser is maximized")
     public void theBrowserIsMaximized() {
-        WebDriverRunner.getWebDriver().manage().window().maximize();
+        getWebDriver().manage().window().maximize();
     }
 
     @And("Search result contains the next characteristics")
-    public void searchResultContainsTheNextCharacteristics(List<String> characteristics) {
-        System.out.println("done");
+    public void searchResultContainsTheNextCharacteristics(DataTable characteristics) {
+        ElementsCollection productDetails = searchPage.getProductDetails();
+        String actualDescription = productDetails.first().getText();
+        List<Map<String,String>> maps = characteristics.asMaps();
+        Map<String, String> characteristicsMap = maps.get(0);
+        assertThat(actualDescription).as("The characteristics string is invalid")
+                                     .isEqualTo(characteristicsMap.get("ALL"));
+
+
+        //System.out.println("done");
     }
 }
 
