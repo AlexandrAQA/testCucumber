@@ -8,6 +8,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -39,6 +41,11 @@ public class OnlinerSearchSteps {
     @And("The browser is maximized")
     public void theBrowserIsMaximized() {
         WebDriverRunner.getWebDriver().manage().window().maximize();
+    }
+
+    @And("Search result contains the next characteristics")
+    public void searchResultContainsTheNextCharacteristics(List<String> characteristics) {
+        System.out.println("done");
     }
 }
 
