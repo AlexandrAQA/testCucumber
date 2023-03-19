@@ -2,7 +2,6 @@ package com.aqa.steps;
 
 import com.aqa.pages.OnlinerSearchPage;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
@@ -12,7 +11,7 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import java.util.Map;
 
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.assertj.core.api.Assertions.assertThat;
 

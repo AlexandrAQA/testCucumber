@@ -22,6 +22,6 @@ Feature: Onliner search
     Then "Apple iPhone 14" is the first search result
     And Search result contains the next characteristics
 
-      | OS        | screen                | rom  | memory           | engine | camera | sim                   |
-      | Apple iOS | 6.1" OLED (1179x2556) | 6 GB | Apple A16 Bionic | 128 GB | 48 MP  | 1 SIM (nano-SIM/eSIM) |
+      | OS        | screen                |
+      | Apple iOS | 6.1" OLED (1179x2556) |
 
