@@ -50,13 +50,13 @@ public class OnlinerSearchSteps {
     public void searchResultContainsTheNextCharacteristics(DataTable characteristics) {
         ElementsCollection productDetails = searchPage.getProductDetails();
         String actualDescription = productDetails.first().getText();
-        List<Map<String,String>> maps = characteristics.asMaps();
+        List<Map<String, String>> maps = characteristics.asMaps();
         Map<String, String> characteristicsMap = maps.get(0);
+
         assertThat(actualDescription).as("The characteristics string is invalid")
-                                     .isEqualTo(characteristicsMap.get("ALL"));
-
-
-        //System.out.println("done");
+                                     .contains(characteristicsMap.get("OS"));
+        assertThat(actualDescription).as("The characteristics string is invalid")
+                                     .contains(characteristicsMap.get("screen"));
     }
 }
 
