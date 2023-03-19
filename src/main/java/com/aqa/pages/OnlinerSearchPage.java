@@ -15,8 +15,6 @@ public class OnlinerSearchPage {
     public ElementsCollection getProductTitles(){
         switchTo().frame($(".modal-iframe"));//iframe and css
         return  $$(".result__item_product .product__title .product__title-link");
-
-
     }
 
     //TODO check in what frame we are

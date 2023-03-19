@@ -37,7 +37,6 @@ public class OnlinerSearchSteps {
         assertThat(actualTitle)
                 .as("The first searchResult is incorrect")
                 .contains(searchResultTitle);
-        //System.out.println();
     }
 
     @And("The browser is maximized")
@@ -58,4 +57,3 @@ public class OnlinerSearchSteps {
                                      .contains(characteristicsMap.get("screen"));
     }
 }
-
